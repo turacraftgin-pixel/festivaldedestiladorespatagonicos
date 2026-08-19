@@ -1089,6 +1089,35 @@
       if (event.target === mP3) { mP3.style.display = 'none'; }
       if (event.target === mIngresar) { mIngresar.style.display = 'none'; }
     }
+    function enviarInscripcionBartender() {
+  const datos = {
+    nombre: document.getElementById('bartenderNombre').value,
+    edad: document.getElementById('bartenderEdad').value,
+    documento: document.getElementById('bartenderDoc').value,
+    nacionalidad: document.getElementById('bartenderNacionalidad').value,
+    residencia: document.getElementById('bartenderResidencia').value,
+    experiencia: document.getElementById('bartenderExperiencia').value,
+    destileria: document.getElementById('bartenderDestileria').value,
+    pago: "Pendiente de verificación de comprobante"
+  };
+
+  const urlSecreta = "https://script.google.com/macros/s/AKfycbxWT-seofkTa3oqJ3GWXtq6OXu9ccudbguA2LoYqVxRNX6f96BzfUK_guoAz8RGgou-/exec";
+
+  fetch(urlSecreta, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(datos)
+  })
+  .then(() => {
+    console.log("Enviado a la planilla con éxito");
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
+}
   </script>
 
 </body>
