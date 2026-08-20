@@ -27,10 +27,19 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background-color: var(--fondo-fresco); color: var(--texto-oscuro); line-height: 1.6; }
 
-    /* BANDERAS */
-    .flag-img { width: 28px; height: 18px; object-fit: cover; border-radius: 3px; vertical-align: middle; box-shadow: 0 2px 4px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.4); }
-    .banderas-container { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,0,0,0.3); padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); }
+   /* BANDERAS FLAMEANTES */
+.bandera-animada {
+    width: 25px;
+    height: 17px;
+    animation: flamear 2.5s infinite ease-in-out;
+    display: inline-block;
+    margin: 0 8px;
+}
 
+@keyframes flamear {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
     /* NAVEGACIÓN SUPERIOR FIJA */
     header { position: sticky; top: 0; z-index: 1000; background: rgba(13, 92, 58, 0.95); backdrop-filter: blur(10px); border-bottom: 4px solid var(--cobre-brillante); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
     nav { max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 0.8rem 1.5rem; }
@@ -239,9 +248,9 @@
   <div class="hero">
     <div class="hero-glass">
       <div class="badge-fresco">
-        <i class="fa-solid fa-earth-americas"></i> Evento Binacional 
-        <img class="flag-img" src="https://flagcdn.com/w40/ar.png" alt="Argentina">
-        <img class="flag-img" src="https://flagcdn.com/w40/cl.png" alt="Chile">
+        <img src="https://flagcdn.com/w40/ar.png" class="bandera-animada" alt="Argentina">
+        <span><i class="fa-solid fa-earth-americas"></i> EVENTO BINACIONAL</span>
+        <img src="https://flagcdn.com/w40/cl.png" class="bandera-animada" alt="Chile">
       </div>
       <h1>1° Festival de Destiladores Patagónicos</h1>
       <h2>Copa Espíritu del Sur</h2>
