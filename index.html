@@ -43,11 +43,28 @@
 
     /* HERO BANNER BINACIONAL */
     .hero {
-      position: relative;
-      background: linear-gradient(135deg, rgba(13, 92, 58, 0.85) 0%, rgba(63, 35, 20, 0.88) 100%), 
-                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
-      color: #fff; text-align: center; padding: 110px 20px 90px; border-bottom: 6px solid var(--verde-primavera);
+    position: relative;
+    background-image: linear-gradient(135deg, rgba(11, 44, 29, 0.75), rgba(0, 0, 0, 0.85)), url('https://tse4.mm.bing.net/th/id/OIP.RJ9JrhLDi1puQQhpaocV9gHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    color: #fff; 
+    text-align: center; 
+    padding: 110px 20px 90px; 
+    border-bottom: 6px solid var(--cobre-brillante);
+    animation: moverFondo 15s infinite alternate ease-in-out;
+}
+
+@keyframes moverFondo {
+    0% {
+        background-size: 100% auto;
+        background-position: center top;
     }
+    100% {
+        background-size: 112% auto;
+        background-position: center bottom;
+    }
+}
     .hero-glass {
       max-width: 980px; margin: auto; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 24px; padding: 40px 25px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);
